@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CS425: Computer Systems Architecture (Fall 2026)</title>
+  <meta name="description" content="Department of Computer Science, University of Crete, CS-425: Computer Systems Architecture">
+  <meta name="keywords" content ="computer architecture, elective courses, undergraduate courses, computer science, computer engineering"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- ALERTS -->
+  <div class="row">
+    <div class="col-md-12">
+    <!--
+      <div class="alert alert-success myalert" role="alert">
+        <br>
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        <b>The first lecture will take place on Monday September 25th 14:15 in room H.204</b>
+        <br>
+        &nbsp;
+      </div>
+      -->
+
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          The <b>Midterm Exam</b> will take place <b>Wednesday, November 26th 13:00 - 15:00</b> in Amphitheater S.O. / B. 
+          <br>
+          The exam is mandatory and the exam material includes all lectures up to Branch Prediction (inclusive).
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Oct. 31, 2025: <a href="homeworks/HY425_Homework1.pdf" class="alert-link">Homework 1</a> is out. The deadline is Monday, Nov. 10th - 23:59.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Nov. 01, 2024: <a href="homeworks/HY425_Homework2.pdf" class="alert-link">Homework 2</a> is out. The deadline is Wednesday, Nov. 13th - 23:59.
+      </div>
+   
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Nov. 21, 2025: <a href="homeworks/HY425_SimAssignment1.pdf" class="alert-link">Simulation Assignment 1</a> is out. The deadline is Wednesday, December 3rd - 23:59.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Dec. 12, 2025: <a href="homeworks/HY425_SimAssignment2.pdf" class="alert-link">Simulation Assignment 2</a> is out. The deadline is Monday, December 22nd - 23:59.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Dec. 30, 2025: <a href="homeworks/HY425_SimAssignment3.pdf" class="alert-link">Simulation Assignment 3</a> is out. The deadline is Monday, February 2nd 2026 - 23:59.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Dec. 22, 2023: <a href="homeworks/HY425_ProgAssignment3.pdf" class="alert-link">Programming Assignment 3</a> is out. The deadline is Monday, January 29th 2024 - 23:59.
+      </div>
+
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          The <b>Final Exam</b> will take place <b>Wednesday, January 17th 2024: 09.30 - 12.30</b>.
+      </div>
+-->
+
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          The <b>Second Final Exam</b> will take place <b>Tuesday, August 29th 2023: 09.30 - 12:30 at Room A.113</b>.
+      </div>
+-->
+
+    <!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        There will be no lecture on Wednesday, November 11th. The lecture will be held <b>Friday, November 13th 16:15</b>.
+      </div>
+      -->
+      <!--div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        The lectures will start <b>Monday September 28th 2020 at 16.15</b> via the online platform Zoom.
+        <p>You can connect to Zoom via the green button further down</p>
+        <br>
+        <b>Subscribe to the mailing list</b> for announcements and updates related to the course.
+        <br>
+        [ Send e-mail to "majordomo@csd.uoc.gr" with body "subscribe hy425-list" ]
+      </div-->
+
+      <!--div class="alert alert-danger" role="alert"-->
+      <!--div class="alert alert-success" role="alert"-->
+      <!--div class="alert alert-info" role="alert"-->
+      <!--div class="alert alert-warning" role="alert"-->
+      <!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        No classes Mon. Oct 29 and Wed. Oct 31. <b><u>Class to be held on Fri. Nov 2. 16:15 - 18:00.</u></b>
+      </div>
+      -->
+     
+
+
+      
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+        Additional classes on Fri. Dec. 07 and Fri. Dec. 14 16:15 - 18:00.</u></b>
+      </div>
+      -->
+
+
+<!--
+      <div class="alert alert-danger myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          Dec. 10, 2020: <a href="homeworks/HY425_Homework3.pdf" class="alert-link">Homework 3</a> is out. The deadline is Monday, December 21st - 23:59.
+      </div>
+
+
+-->
+<!--
+      <div class="alert alert-warning myalert" role="alert">
+        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+          The <b>Final Exam</b> will take place <b>Tuesday, January 26th 2021: 16.00 - 19.00</b>. 
+          <br>
+          The exam will be held via Microsoft Teams and you will have to connect via your University Account. Apply to goin and participate in the exam in the following Team link by Tuesday, January 26th 14:00 the latest:
+          <br>
+          <a href="https://teams.microsoft.com/l/team/19%3a49e0b1bb94d64b54a3b2b87c62382f1f%40thread.tacv2/conversations?groupId=f9d09160-07cb-49fd-863d-9cb4be99c3ce&tenantId=b6e0a680-49f9-4523-a06b-d5a873656d37" class="alert-link">
+          Join the Teams Platform for the HY425 Exam</a>. 
+          <br>
+          The rules and instructions for the Exam as available 
+          <a href="misc/HY425_Exams_Instructions.pdf" class="alert-link">HERE</a>.
+      </div>
+  -->
+
+
+<!--
+
+-->
+
+
+
+    </div>
+  </div>
+
+  <!-- ______________________________________________________________________________________________ -->
+
+  <!-- HEADER -->
+  <div class="row">
+    <div class="col-md-1 hidden-xs">
+       <img src="./assets/images/amd_quad_core.jpg" class="myimg img-responsive img-rounded center-block">
+    </div>
+    <div class="col-md-11">
+      <h3 class="mytitle">
+       CS425: Computer Systems Architecture (Fall 2026)
+      </h3>
+      <h5>
+        <a href="http://www.csd.uoc.gr/" target="_new">Department of Computer Science</a>,
+        <a href="http://www.uoc.gr/" target="_new">University of Crete</a>
+      </h5>
+    </div>
+  </div>
+  <!-- ______________________________________________________________________________________________ -->
+
+  
+  <!-- NAVIGATION TABS -->
+  <ul class="nav nav-pills nav-justified bg-info">
+    <li class="active">
+      <a data-toggle="pill" href="#course"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> Course</a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#lectures"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Lectures <span class="badge"></span></a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#assignments"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Assignments <span class="badge alert-danger"></span></a>
+    </li>
+    <li>
+      <a data-toggle="pill" href="#archive"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Archive</a>
+    </li>
+  </ul>
+  <hr>
+  <!-- ______________________________________________________________________________________________ -->
+
+  <div class="tab-content">
+
+    <!-- COURSE/MAIN/HOME -->
+    <div id="course" class="tab-pane fade in active">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Schedule</h3>
+            </div>
+            <div class="panel-body">
+              <p>
+                <b>Class hours:</b> Monday and Wednesday 13.15 - 15.00 in room H.204.
+              </p>
+              <!-- COULD BE well-sm bg-alert -->
+              <div class="alert alert-warning myalert" role="alert">
+                <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+                Friday classes will be held as needed in room H.204 (13:15 - 15:00) to make up in case of instructor's absence during regular class meeting times. 
+              </div>
+
+              <p>
+                <b>Office hours:</b> Mondays 12:00 - 13:00 @ K319 (by appointment)
+                <!--<b>Office hours:</b> By Appointment.-->
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Staff</h3>
+            </div>
+            <!--div class="panel-body">
+            </div-->
+            <table class="table table-bordered">
+              <tr>
+                <td>
+                  <b>Instructor</b>
+                </td>
+                <td>
+                  <b>Teaching Assistant(s)</b>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://sites.google.com/site/papaef/" target="_new">Vassilis Papaefstathiou</a>
+                </td>
+                <td>
+                  Mr. Sotiris Totomis
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Course Information</h3>
+        </div>
+        <!-- div class="panel-body">
+        </div -->
+        <table class="table table-bordered">
+          <tr>
+            <td>
+              <b>Area:</b> 
+            </td>
+            <td>
+              Hardware and Computer Systems (E4)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Description:</b> 
+            </td>
+            <td>
+              Performance metrics, pipelining and hazards, dynamic instruction scheduling with scoreboard and Tomasulo, ILP and static instruction scheduling, branch prediction, precise exceptions, speculation, multiple issue out-of-order superscalar processors, VLIW processors, thread level paralellism and multithreaded processors, multi-level cache memories and design optimizations, virtual memory and TLBs, multicore processors, snoop-based cache coherence, memory consistency, DRAM main memory technologies.
+              <!--
+              Pipelining with a fixed number of stages per instruction: hardware resource utilization, interdependencies, bypassing, waiting, delayed branches, interrupts. Instruction set architecture: basic principles of computer system design, cost, performance, frequency of instruction usage. Performance evaluation using benchmarks. Study of various instruction set types and their components. Examples of machines and their instruction sets. Memory and I/O systems: cache memory, parameters (cache size, block size, associativity), and their effect on performance. Virtual memory, address translation, protection, TLBs. Page faults and pipelining. Physical/virtual-address cache memories (index/tag), aliasing, flushing. I/O and peripheral devices.
+              -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>ECTS:</b> 
+            </td>
+            <td>
+              6
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Prerequisites:</b> 
+            </td>
+            <td>
+              <a href="http://www.csd.uoc.gr/~hy225" target="_new">CS225 Computer Organization</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Grading:</b> 
+            </td>
+            <td>
+              Homeworks/Assignments: 35% <i>(grade must be > 4.5)</i>
+              <br>
+              Midterm Exam: 20% <i>(mandatory)</i>
+              <br>
+              Final Exam: 45% <i>(grade must be > 4.5)</i>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <b>Mailing-list:
+            </td>
+            <td>
+              hy425 <u>at</u> list <u>dot</u> csd <u>dot</u> uoc <u>dot</u> gr
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Textbooks and Reading Material</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-2">
+            <img src="./assets/images/hp_book_small_2020.jpg" class="myimg img-responsive img-rounded center-block" alt="Computer Architecture, A Quantitative Approach">
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              Hennessy and Patterson, Computer Architecture: A Quantitative Approach, 6th Edition/2020. Available in Greek (Klidarithmos Publishers, translation by D. Gizopoulos). ISBN 978-960-645-095-2. 
+            </p>
+            <p>
+              <a href="https://service.eudoxus.gr/search/#a/id:94644180/0" target="_new">[Eudoxus Link]</a>
+            </p>
+            <p>
+              <a href="https://www.klidarithmos.gr/arxitektoniki-ypologiston-6h-ekdosh" target="_new">[Book Page]</a>
+            </p>
+          </div>
+
+          <div class="col-md-2">
+            <img src="./assets/images/st_book_small_2020.jpg" class="myimg img-responsive img-rounded center-block" alt="Computer Architecture, A Quantitative Approach">
+          </div>
+
+          <div class="col-md-4">
+            <p>
+              William Stallings, Computer Organization and Architecture: Designing for Performance, 11th Edition/2020. Available in Greek (Tziolas Publishers, translation by M. Roumeliotis). ISBN 978-960-418-892-5. 
+            </p>
+            <p>
+              <a href="https://service.eudoxus.gr/search/#a/id:94692327/0" target="_new">[Eudoxus Link]</a>
+            </p>
+            <p>
+              <a href="https://www.tziola.gr/book/organosi_ypologistwn_stallings_11e/" target="_new">[Book Page]</a>
+            </p>
+          </div>
+
+
+
+          <div class="col-md-12">
+          <p>
+            <b>Additional reading:</b> Shen and Lipasti, Modern Processor Design, Fundamentals of Superscalar Processors, McGraw Hill, 2005, ISBN 0-07-059033-8.
+          </p>   
+          <p>
+            Additional reading material will be posted as needed, during classes. Reading material includes Chapters from other textbooks (in English) and technical papers from conferences or journals covering the field of Computer Architecture.
+          </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- LECTURES -->
+    <div id="lectures" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span> Lectures Schedule and Material</h3>
+        </div>
+        <!--div class="panel-body">
+        </div-->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Material</th>
+              <th>Reading List</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Sep. 21</td>
+              <td>Welcome and Introduction</td> 
+              <td></td>
+              <td></td>
+            </tr>
+
+<!--
+            <tr>
+              <td>Sep. 24</td> 
+              <td>Introduction</td> 
+              <td><a href="lectures/HY425_L1_Intro.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 1 (1.1 - 1.4) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Sep. 29</td>
+              <td>Metrics</td>
+              <td><a href="lectures/HY425_L2_Metrics.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 1 (1.5 - 1.13) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Oct. 01</td> 
+              <td>Metrics</td> 
+              <td>Slides from Sep. 29</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 06</td> 
+              <td>Metrics</td> 
+              <td>Slides from Sep. 29</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 08</td> 
+              <td>Pipelining Review</td> 
+              <td><a href="lectures/HY425_L3_Pipelining.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Appendix C (C.1 - C.4) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Oct. 13</td> 
+              <td>Pipelining Review</td> 
+              <td>Slides from Oct. 08</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 15</td> 
+              <td>Pipelining Review</td> 
+              <td>Slides from Oct. 08</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 17</td> 
+              <td>Dynamic Instruction Scheduling: Scoreboard</td>
+              <td><a href="lectures/HY425_L4_Scoreboard.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.1 - 3.2) & Appendix C (C.5 - C.10) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Oct. 20</td> 
+              <td>Dynamic Instruction Scheduling: Scoreboard</td>
+              <td>Slides from Oct. 17</td>
+              <td><a href="lectures/reading/cdc6600.pdf">CDC 6600 original scoreboard design paper <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 22</td> 
+              <td>Dynamic Instruction Scheduling: Tomasulo</td>
+              <td><a href="lectures/HY425_L5_Tomasulo.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.4 - 3.5) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Oct. 27</td> 
+              <td>Dynamic Instruction Scheduling: Tomasulo</td>
+              <td>Slides from Oct. 16</a></td>
+              <td><a href="lectures/reading/tomasulo.pdf">Tomasulo's original paper <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 29</td>
+              <td>Static Instruction Scheduling</td>
+              <td><a href="lectures/HY425_L6_StaticScheduling.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.2) & Chapter 4 (4.5) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Nov. 03</td> 
+              <td>Static Instruction Scheduling</td>
+              <td>Slides from Oct. 29</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 05</td> 
+              <td>Intro to Simulation with gem5 (S. Totomis)</td>
+              <td>
+                 <a href="lectures/gem5/HY425_Gem5_Intro.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a> 
+              </td>
+              <td>
+                 <a href="lectures/gem5/tutorial-riscv.py">tutorial-riscv.py <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a> 
+                 <br>
+                 <a href="lectures/gem5/tutorial_caches.py">tutorial_caches.py <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a> 
+              </td>
+            </tr>
+
+            <tr>
+              <td>Nov. 07</td>
+              <td>Branch Prediction</td>
+              <td><a href="lectures/HY425_L7_BranchPrediction.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.3 & 3.9) & Appendix C (C.2) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Nov. 10</td>
+              <td>Branch Prediction</td>
+              <td>Slides from Nov. 07</a></td>
+              <td>
+                  <a href="lectures/reading/yeh.pdf">1. Alternative implementations of two-level adaptive branch predictors <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                  <br>
+                  <a href="lectures/reading/mcfarling.pdf">2. Combining branch predictors <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Nov. 12</td>
+              <td>Reorder Buffer, Precise Exceptions and Speculation</td>
+              <td><a href="lectures/HY425_L8_ReorderBuffer.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.6) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Nov. 19</td>
+              <td>Reorder Buffer, Precise Exceptions and Speculation</td>
+              <td>Slides from Nov. 12</a></td>
+              <td><a href="lectures/reading/smith88.pdf">Implementing Precise Interrupts in Pipelined Processors (+ Future File) <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 19</td> 
+              <td>Multiple Issue Processors: Superscalar and VLIW</td>
+              <td><a href="lectures/HY425_L9_MultipleIssue.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.7 - 3.10) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Nov. 24</td> 
+              <td>Multiple Issue Processors: Superscalar and VLIW</td>
+              <td>Slides from Nov. 19</a></td>
+              <td><a href="lectures/reading/wall-ilp.pdf">Limits of Instruction-Level Parallelism <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+            </tr>
+
+            <tr class="warning text-danger">
+              <td>Nov. 26</td> 
+              <td><b>Midterm Examination (mandatory 20%)</b></td>
+              <td></td>
+              <td>All lectures up to Branch Prediction (inclusive)</td>
+            </tr>
+
+            <tr>
+              <td>Dec. 01</td> 
+              <td>Thread-Level Parallelism (TLP)</td>
+              <td><a href="lectures/HY425_L10_Multithreading.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 3 (3.11) from textbook</td>
+            </tr>
+-->
+<!--
+            <tr class="info">
+              <td>Nov. 15</td> 
+              <td>Solutions for Homework 1 & 2 + Intro to Sim. Assignment (S. Totomis)</td>
+              <td></td>
+              <td>
+                 <a href="homeworks/HY425_Homework1.pdf">Homework 1 <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a> 
+                 <a href="homeworks/HY425_Homework2.pdf">Homework 2 <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a> 
+                 <a href="homeworks/HY425_SimAssignment1.pdf">Simulation Assignment 1 <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a> 
+              </td>
+            </tr>
+-->
+
+<!--
+            <tr>
+              <td>Dec. 03</td> 
+              <td>Thread-Level Parallelism (TLP)</td>
+              <td>Slides from Dec. 01</a></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Dec. 05</td> 
+              <td>Vector Processors</td>
+              <td><a href="lectures/HY425_L11_Vector.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 4 (4.1 - 4.2) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Dec. 08</td> 
+              <td>Vector Processors</td>
+              <td>Slides from Dec. 05</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Dec. 10</td> 
+              <td>Graphics Processing Units - GPUs</td>
+              <td><a href="lectures/HY425_L12_GPU.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 4 (4.4) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Dec. 12</td> 
+              <td>Graphics Processing Units - GPUs</td>
+              <td>Slides from Dec. 10</td>
+              <td></td>
+            </tr>
+
+
+            <tr>
+              <td>Dec. 15</td>
+              <td>Cache memories: Design and performance analysis</td>
+              <td><a href="lectures/HY425_L13_CacheBasics.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Appendix B (B.1 - B.2) from textbook</td>
+            </tr>
+
+-->
+<!--
+            <tr>
+              <td>Dec. 11</td> 
+              <td>Cache memories: Design and performance analysis</td>
+              <td>Slides from Dec. 09</td>
+              <td></td>
+            </tr>
+-->
+
+<!--
+            <tr>
+              <td>Dec. 17</td>
+              <td>Cache design optimizations</td>
+              <td><a href="lectures/HY425_L14_CacheAdvanced.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 2 (2.1, 2.3) from textbook</td>
+            </tr>
+
+            <tr>
+              <td>Dec. 19</td>
+              <td>Cache design optimizations</td>
+              <td>Slides from Dec. 17</td>
+              <td></td>
+            </tr>
+-->
+
+<!--
+            <tr>
+              <td>Dec. 18</td> 
+              <td>Multi-core Processors (Basics)</td>
+              <td><a href="lectures/HY425_L15_Multicores.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td></td>
+            </tr>
+
+-->
+<!--
+            <tr>
+              <td>Dec. 18</td> 
+              <td>Snoop-based Cache Coherence</td>
+              <td><a href="lectures/HY425_L13_SnoopCoherence.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Chapter 4</td>
+            </tr>
+
+
+            <tr>
+              <td>Dec. 22</td> 
+              <td>Virtual Memory</td>
+              <td><a href="lectures/HY425_L15_VirtualMemory.pdf">Slides <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td>Appendix C.4</td>
+            </tr>
+            <tr>
+            <td> 16 Dec. </td> 
+            <td>Main Memory</td>
+            <td><a href="lectures/Lec16_dram.pdf">Slides</a></td>
+            <td>Chapter 7, Sections 7.1&ndash;7.5, from textbook Memory Systems:
+            Cache, DRAM, Disk, by Bruce Jacob, Spencer W. Ng, and David T. Wang</td>
+            <td></td>
+            </tr>
+-->
+<!--
+
+            <tr class="warning text-danger">
+              <td>Jan. 16</td> 
+              <td><b>Final Examination (mandatory 45%)</b></td>
+              <td></td>
+              <td>Friday, January 16th 2026: 16.30 - 19.30 @ Amph. S.O. / B</td>
+            </tr>
+-->
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- ASSIGNMENTS -->
+    <div id="assignments" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Homeworks and Assignments</h3>
+        </div>
+        <!--div class="panel-body">
+        </div-->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Material</th>
+              <th>Deadline</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>TBA</td>
+              <td>Homework 1</td> 
+              <td><a href="#">HW <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>TBA</b></td>
+            </tr>
+
+<!--
+            <tr>
+              <td>Oct. 31</td>
+              <td>Homework 1</td> 
+              <td><a href="homeworks/HY425_Homework1.pdf">HW <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>Nov. 10, 23:59</b></td>
+            </tr>
+
+-->
+<!--
+            <tr>
+              <td>Nov. 01</td>
+              <td>Homework 2</td> 
+              <td><a href="homeworks/HY425_Homework2.pdf">HW <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>Nov. 13, 23:59</b></td>
+            </tr>
+-->
+
+<!--
+            <tr>
+              <td>Nov. 21</td>
+              <td>Simulation Assignment 1</td> 
+              <td><a href="homeworks/HY425_SimAssignment1.pdf">SIM <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>Dec. 03, 23:59</b></td>
+            </tr>
+
+            <tr>
+              <td>Dec. 12</td>
+              <td>Simulation Assignment 2</td> 
+              <td><a href="homeworks/HY425_SimAssignment2.pdf">SIM <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>Dec. 22, 23:59</b></td>
+            </tr>
+
+            <tr>
+              <td>Dec. 30</td>
+              <td>Simulation Assignment 3</td> 
+              <td><a href="homeworks/HY425_SimAssignment3.pdf">SIM <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>Feb. 02 2026, 23:59</b></td>
+            </tr>
+-->
+
+<!--
+
+            <tr>
+              <td>Dec. 10</td>
+              <td>Homework 3</td> 
+              <td><a href="homeworks/HY425_Homework3.pdf">HW <span class="glyphicon glyphicon-save" aria-hidden="true"></span></a></td>
+              <td class="text-danger"><b>Dec. 21, 23:59</b></td>
+            </tr>
+
+
+-->
+            <!--tr>
+              <td>TBA</td>
+              <td>Homework 2</td>
+              <td><a href="#">HW</a></td>
+              <td>TBA</td>
+            </tr-->
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+    <!-- ARCHIVE -->
+    <div id="archive" class="tab-pane fade">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Websites from Previous Years</h3>
+        </div>
+        <!--div class="panel-body">
+        </div-->
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2025f/index.html">Fall 2025</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2024f/index.html">Fall 2024</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2023f/index.html">Fall 2023</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2022f/index.html">Fall 2022</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2021f/index.html">Fall 2021</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2020f/index.html">Fall 2020</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2019f/index.html">Fall 2019</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2018f/index.html">Fall 2018</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2017f/index.html">Fall 2017</a> (taught by V. Papaefstathiou)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2016f/index.html">Fall 2016</a> (taught by V. Papaefstathiou and I. Mavroidis)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2015f/index.html">Fall 2015</a> (taught by I. Mavroidis)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2014f/index.html">Fall 2014</a> (taught by I. Mavroidis)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2013f/index.html">Fall 2013</a> (taught by C. Sotiriou and I. Mavroidis)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2012f/index.html">Fall 2012</a> (taught by C. Sotiriou and I. Mavroidis)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2011f/index.html">Fall 2011</a> (taught by D. Nikolopoulos)
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2008f/index.html">Fall 2008</a> 
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2008s/index.html">Spring 2008</a>
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.csd.uoc.gr/~hy425/2002s/index.html">Spring 2002</a> (taught by C. Sotiriou)
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- ______________________________________________________________________________________________ -->
+
+  </div> <!-- END TAB-CONTENT-->
+
+  <!-- FOOTER -->
+  <div class="well well-sm" align="right">
+    <i><b>Last update:</b> 21 Sep. 2026 </i> - by V. Papaefstathiou
+  </div>
+  <!-- ______________________________________________________________________________________________ -->
+
+</div>
+</body>
+</html>
